@@ -1,0 +1,38 @@
+from sklearn.datasets import load_iris
+import pandas as pd
+import xlrd
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import LinearRegression
+from sklearn import metrics
+from sklearn import model_selection
+from sklearn.tree import DecisionTreeClassifier
+
+
+data = pd.read_excel("training.xlsx")
+t = pd.read_excel("validation.xlsx")
+m = t.drop(84,axis=0)
+l = data.drop(1460,axis=0)
+target = l.classLabel
+
+training_data = l.drop(['Unnamed: 19','classLabel'],axis=1)
+validation_data = m.drop(['Unnamed: 19','classLabel'],axis=1)
+
+
+knn = KNeighborsClassifier(n_neighbors=2)
+knn.fit(training_data,target)
+
+k_range = list(range(1, 31))
+k_scores = []
+for k in k_range:
+    knn = KNeighborsClassifier(n_neighbors=k)
+    scores = model_selection.cross_val_score(knn, training_data, target, cv=10, scoring='accuracy')
+    k_scores.append(scores.mean())
+print(k_scores)
+
+
+knn = KNeighborsClassifier(n_neighbors=1)
+knn.fit(training_data,target)
+
+predict1 = (knn.predict(validation_data))
+print(predict1)
+
