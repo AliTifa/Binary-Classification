@@ -21,7 +21,7 @@ validation_data = m.drop(['Unnamed: 19','classLabel'],axis=1)
 knn = KNeighborsClassifier(n_neighbors=2)
 knn.fit(training_data,target)
 
-k_range = list(range(1, 31))
+k_range = list(range(1, 30))
 k_scores = []
 for k in k_range:
     knn = KNeighborsClassifier(n_neighbors=k)
