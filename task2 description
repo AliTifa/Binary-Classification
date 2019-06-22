@@ -1,0 +1,28 @@
+To tackle this task I have followed the following procedures: 
+
+1 - Meaningful Data:
+
+I have tried to transform the given data to data that can be manipulated. I have done the following:
+
+a - I transformed the alphabets into numbers with this coding strategy:
+          [  a  = 10000  , b = 10001 , c = 10002 . . . and so on ]
+          
+b - I have eliminated any data with NaN values. I am not sure how this elimination can affect the accuracy of the model.
+
+
+2 - Testing the models:
+
+After uploading the data into python, I tried different models such as: 
+
+K-Nearest Neighbors
+Linear Discriminant Analysis
+Logistic Regression
+Classification and Regression Trees
+
+By calculating the average and the standard diviation of each model, the KNN model was the best fit.
+
+
+3- Choosing the best parameter: 
+
+I tried parameter from [1 to 30]. It appeared that 1 is the best fit. 
+
