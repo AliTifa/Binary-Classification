@@ -24,5 +24,8 @@ By calculating the average and the standard diviation of each model, the KNN mod
 
 3- Choosing the best parameter: 
 
-I tried parameter from [1 to 30]. It appeared that 1 is the best fit. 
+Finally, I tried parameter from [1 to 30]. It appeared that 1 is the best fit. 
 
+
+
+# I think my procedures are very limited. There are so much to learn.
